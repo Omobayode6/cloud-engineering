@@ -78,3 +78,18 @@ The first dash (-) indicates the type of file (d for directory, s for special fi
   
 Configuration of the Advanced Packaging Tool (APT) system repositories is stored in the /etc/apt/sources.list file and the /etc/apt/sources.list.d directory.  
 A makefile contains instructions for how an application should be compiled.
+
+## SystemD
+* systemctl or systemctl list-units- list of all applications(units)
+* systemctl --failed - List failed units
+* systemctl status apache2 - xcheck application(apache2) status 
+* systemctl stop apache2 - stop application(apache2)
+* journalctl -u apache2 - See application(apache2) log info
+* systemctl reboot <application>
+* systemctl poweroff <application>
+* systemctl suspend <application>
+* systemctl hibernate <application>
+* 
+  system log info are stores in /var/log. /var/log/journal is the journal log info directory
+  
+  
