@@ -51,7 +51,7 @@ Press i - for insert mode when you are done editing press esc and use :wq to wri
 * Using nano
 $nano text.txt
 
-## groups & users  
+## Groups & Users  
 -rw-r--r-- 1 root root 1031 Nov 18 09:22 /etc/passwd  
 The first dash (-) indicates the type of file (d for directory, s for special file, and - for a regular file).
 * cat /etc/passwd - To get users and their groups 
