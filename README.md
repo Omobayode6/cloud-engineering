@@ -83,21 +83,7 @@ $nano text.txt
 * ifconfig - configure a network interface
 * ip - show/manipulate routing, network devices, interfaces and tunnels
 * ip a - pull up all ip informations
-
-## Groups & Users  
--rw-r--r-- 1 root root 1031 Nov 18 09:22 /etc/passwd  
-The first dash (-) indicates the type of file (d for directory, s for special file, and - for a regular file).
-* cat /etc/passwd - To get users and their groups 
-* useradd <username> - To create user
-* useradd -m <username> - To create userwith home directory
-* useradd -g <primarygroupname> <username> - Add primary group name to user
-* groups <username> - To get the group name
-* id -gn <username> - To get the group name
-* id <username> - To get the useer and group id with the group name
-* usermod -G <groupname> <username> - Add user to another group
-* usermod -G <groupname1>,<groupname2> <username> - Add user to multiple groups
-
-
+  
 ## apt
 * sudo - super user do (execute a command as another user) 
 * apt - advanced package management tool(facilitate the process of installing and uninstalling linux software packages.)
@@ -111,11 +97,24 @@ The first dash (-) indicates the type of file (d for directory, s for special fi
 * $ sudo add-apt-repository <repo directory> - install app using package repository
 * apt install apache2 - Install apache
 * curl localhost - To see the server in the terminal  
-  Apache web service is the sutware that respon and sed the website file to our browser.
+Apache web service is the sutware that respon and sed the website file to our browser.
   
 Configuration of the Advanced Packaging Tool (APT) system repositories is stored in the /etc/apt/sources.list file and the /etc/apt/sources.list.d directory.  
 A makefile contains instructions for how an application should be compiled.
 
+## Groups & Users  
+-rw-r--r-- 1 root root 1031 Nov 18 09:22 /etc/passwd  
+The first dash (-) indicates the type of file (d for directory, s for special file, and - for a regular file).
+* cat /etc/passwd - To get users and their groups 
+* useradd <username> - To create user
+* useradd -m <username> - To create userwith home directory
+* useradd -g <primarygroupname> <username> - Add primary group name to user
+* groups <username> - To get the group name
+* id -gn <username> - To get the group name
+* id <username> - To get the useer and group id with the group name
+* usermod -G <groupname> <username> - Add user to another group
+* usermod -G <groupname1>,<groupname2> <username> - Add user to multiple groups
+  
 ## SystemD
 * systemctl or systemctl list-units- list of all applications(units)
 * systemctl --failed - List failed units
