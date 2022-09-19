@@ -14,8 +14,8 @@
 * $ifconfig - to check the ip address  
 
 ## Linux Command
-(~) is home directory
-(/) is root of file system for linux operating system
+( ~ ) is home directory  
+( / ) is root of file system for linux operating system
 * man man
 * man <option>
 * uname -a - type of system/linux version
