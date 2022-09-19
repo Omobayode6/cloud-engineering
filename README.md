@@ -29,8 +29,10 @@
 * df -h - tell you about your storage
 * press ctr q or type exit - to exit running process
 * pwd - print working directory
-* cd - takes you back to home directory from anywhere you are.
 * cd <DIR> - change directory
+* cd - takes you back to user home directory from anywhere you are - same as cd ~
+* cd ~ - to switch to user home directory.
+* cd / - takes you to the root directory of file system.
 * ls | ls -a | ls -l | ls -h | ls -al | ls -alh - list
 * ls -a - for all files including hiden files.
 * ls -l - for files with directories and permisions.
@@ -58,11 +60,13 @@
 * tail filename - output the last 10 lines of the file
 * tail -5 filename - output the last 5 lines of the file
 * cat filename - display the file content
+* cat filename | grep Omobayode - display only the lines that has Omobayode in it
 * cat filename filename2 - display the files content at once
 * cat filename filename2 > filename3 - concatenate the two files content into filename3 and if filename3 doesnot exit it will create it.
 * cat > filename - let you create a file and write the content into it at once. Press "ctr d" to save the content when you are done.
 * cat file.txt > file2.txt - copy the content of file to file2.
 * echo content > filename -  write the content into the filename and if the file doesnot exit create it.
+* echo $HOME - shows you the user home directory
 * more filename - to see the content of the file page by page, use spacebar to move to the next page and q to quit.
 * less filename - to see the content of the file page by page with higher overview, use spacebar to move to the next page and q to quit.
 
@@ -86,6 +90,7 @@ $nano text.txt
   
 ## apt
 * sudo - super user do (execute a command as another user) 
+* sudeo su - to switch to the root user
 * apt - advanced package management tool(facilitate the process of installing and uninstalling linux software packages.)
 * sudo apt update - Update the Package Index
 * sudo apt list --upgradable - to see the list of ungradable packages
@@ -103,17 +108,28 @@ Configuration of the Advanced Packaging Tool (APT) system repositories is stored
 A makefile contains instructions for how an application should be compiled.
 
 ## Groups & Users  
+Everything in linux is represented as file.  
 -rw-r--r-- 1 root root 1031 Nov 18 09:22 /etc/passwd  
 The first dash (-) indicates the type of file (d for directory, s for special file, and - for a regular file).
-* cat /etc/passwd - To get users and their groups 
+* cat /etc/passwd - To get users and their groups (username : password : user ID : Group ID : homeDIR : shellUsed)
 * useradd <username> - To create user
 * useradd -m <username> - To create userwith home directory
-* useradd -g <primarygroupname> <username> - Add primary group name to user
-* groups <username> - To get the group name
-* id -gn <username> - To get the group name
-* id <username> - To get the useer and group id with the group name
-* usermod -G <groupname> <username> - Add user to another group
-* usermod -G <groupname1>,<groupname2> <username> - Add user to multiple groups
+* useradd -g <primarygroupname> <username> - to create user with primary group name.
+* userdel username - to delete a user.
+* groups <username> - To get the user group. (Output - username: usergroupName)
+* id -gn <username> - To get the groupname
+* id <username> - To get the user and group id with the group name
+* usermod -g <groupname> <username> - make the group user primary group.
+* usermod -G <groupname> <username> - Add user to another group (to a new supplementary group)
+* usermod -G <groupname1>,<groupname2> <username> - Add user to multiple groups  
+  
+MANAGING GROUPS  
+  Groups are stored in /etc/group - cat /etc/group (output - groupName : password : group ID : Users)
+  * groupadd groupname - to create a group
+  * groupmod -n grouprename groupname - to rename thr groupname where -n stands for new-name
+  * groupdel groupname - to delete a group
+  
+  ## File Permission
   
 ## SystemD
 * systemctl or systemctl list-units- list of all applications(units)
