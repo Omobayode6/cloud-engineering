@@ -15,6 +15,7 @@
 
 ## Linux Command
 (~) is home directory
+(/) is root of file system for linux operating system
 * man man
 * man <option>
 * uname -a - type of system/linux version
@@ -54,6 +55,16 @@
 * command --help - quick help on how to use the command
 * head filename - output the first 10 lines of the file
 * head -5 filename - output the first 5 lines of the file
+* tail filename - output the last 10 lines of the file
+* tail -5 filename - output the last 5 lines of the file
+* cat filename - display the file content
+* cat filename filename2 - display the files content at once
+* cat filename filename2 > filename3 - concatenate the two files content into filename3 and if filename3 doesnot exit it will create it.
+* cat > filename - let you create a file and write the content into it at once. Press "ctr d" to save the content when you are done.
+* cat file.txt > file2.txt - copy the content of file to file2.
+* echo content > filename -  write the content into the filename and if the file doesnot exit create it.
+* more filename - to see the content of the file page by page, use spacebar to move to the next page and q to quit.
+* less filename - to see the content of the file page by page with higher overview, use spacebar to move to the next page and q to quit.
 
 ## Change Time Zone
 * timedatectl system current time status
@@ -62,10 +73,16 @@
 
 ## Editing Files
 * Using Vim  
-$vim text.txt - use vim to open text.txt  
-Press i - for insert mode when you are done editing press esc and use :wq to write and quit
-* Using nano
+$vim text.txt - use vim to open text.txt and it enters the command mode.
+Press i - for insert mode when you are done editing press esc to go back to command mode and use :wq to write out your changes and quit. :w - write out, :q - quit, :q!, force quit without asking to save the changes made to the file.
+* Using nano  
+The comman to write out and quit(exit) is bellow the text editor when opened.
 $nano text.txt
+
+## Networking
+* ifconfig - configure a network interface
+* ip - show/manipulate routing, network devices, interfaces and tunnels
+* ip a - pull up all ip informations
 
 ## Groups & Users  
 -rw-r--r-- 1 root root 1031 Nov 18 09:22 /etc/passwd  
@@ -82,12 +99,16 @@ The first dash (-) indicates the type of file (d for directory, s for special fi
 
 
 ## apt
+* sudo - super user do (execute a command as another user) 
+* apt - advanced package management tool(facilitate the process of installing and uninstalling linux software packages.)
+* sudo apt update - Update the Package Index
+* sudo apt list --upgradable - to see the list of ungradable packages
+* sudo apt upgrade - Upgrade Packages
+* sudo apt search packageName - search for a package
 * sudo apt install <packageName> - Install a Package
 * sudo apt remove <packageName> - Remove a Package
-* sudo apt update - Update the Package Index
-* sudo apt upgrade - Upgrade Packages
 * apt help - To get help on apt
-* $ sudo add-apt-repository <repo directory> - install app using package repo
+* $ sudo add-apt-repository <repo directory> - install app using package repository
 * apt install apache2 - Install apache
 * curl localhost - To see the server in the terminal  
   Apache web service is the sutware that respon and sed the website file to our browser.
@@ -104,8 +125,7 @@ A makefile contains instructions for how an application should be compiled.
 * systemctl reboot <application>
 * systemctl poweroff <application>
 * systemctl suspend <application>
-* systemctl hibernate <application>
-* 
-  system log info are stores in /var/log. /var/log/journal is the journal log info directory
+* systemctl hibernate <application>  
+system log info are stores in /var/log. /var/log/journal is the journal log info directory
   
   
