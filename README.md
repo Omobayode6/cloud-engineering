@@ -14,6 +14,9 @@
 * $ifconfig - to check the ip address  
 
 ## Linux Command
+(~) is home directory
+* man man
+* man <option>
 * uname -a - type of system/linux version
 * date - system date and time
 * uptime - how long the system has been up
@@ -25,19 +28,32 @@
 * df -h - tell you about your storage
 * press ctr q or type exit - to exit running process
 * pwd - print working directory
+* cd - takes you back to home directory from anywhere you are.
 * cd <DIR> - change directory
-* ls | ls -al | ls -l - list
+* ls | ls -a | ls -l | ls -h | ls -al | ls -alh - list
+* ls -a - for all files including hiden files.
+* ls -l - for files with directories and permisions.
+* ls -h - display the files and folder i uman redable format.
 * mkdir <DIR> - make directory
+* mkdir -p Test/test_child -  the -p is used to make parent directory and you can make grand parents with it too.
 * touch filename - create a file
-* cp file1 file2 copy file from 1 to 2
+* cp file1 file2 - copy file from 1 to 2
+* cp -r dirname dirname2 - to copy a directory
 * mv file1 fil2 - cut and past from file 1 to 2 or rename file 1 to 2
+* mv dirname dirname2 - move dirname to dirname 2 or rename the directory.
 * rm filename - delete the file
+* rmdir directory_name - remove empty directory.
+* rmdir -p Test/test_child - remove a parent directory or a non empty directory.
+* rm -rf dirname - to remove a directory also.
+* file filename - give information about a file.
 * cat filename - display the content of file
 * head filename - display first 10 content of the file
 * tail filename - display the last 10 content of the file
 * man commandname - full documentation on how to use the command
 * commandname --h - quick help on how to use the command
 * command --help - quick help on how to use the command
+* head filename - output the first 10 lines of the file
+* head -5 filename - output the first 5 lines of the file
 
 ## Change Time Zone
 * timedatectl system current time status
