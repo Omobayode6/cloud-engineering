@@ -140,7 +140,7 @@ MANAGING GROUPS
   3. other (o) - other users who has access to the file(everybody else)  
   4. all users (a)
   
-  PERMISSIONS
+  PERMISSIONS  
   Linux uses file permission to distinquish these three users.  
   Every file directory has three permissions.  
   * Read - 4
@@ -156,7 +156,7 @@ MANAGING GROUPS
   * add +
   * replace =
   
-  TO SET FILE PERMISSIONS
+  SET FILE PERMISSIONS
   * chown - choose owner(to assign file to user)
   * chmod - CHange MODe (changes the permissions (attributes) of a file or directory)
   * chmod 750 dirname/filename - user(owner) - full permisions(7), group -read and execute permissions(5), others - no permissions(0).
