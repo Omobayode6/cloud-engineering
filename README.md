@@ -113,12 +113,12 @@ Everything in linux is represented as file.
 The first dash (-) indicates the type of file (d for directory, s for special file, and - for a regular file).
 * cat /etc/passwd - To get users and their groups (username : password : user ID : Group ID : homeDIR : shellUsed)
 * useradd <username> - To create user
-* useradd -m <username> - To create userwith home directory
+* useradd -m <username> - To create user with home directory
 * useradd -g <primarygroupname> <username> - to create user with primary group name.
 * userdel username - to delete a user.
-* groups <username> - To get the user group. (Output - username: usergroupName)
-* id -gn <username> - To get the groupname
-* id <username> - To get the user and group id with the group name
+* groups <username> - To get the usergroup. (Output - username: usergroupName)
+* id -gn <username> - To get the groupname of the user
+* id <username> - To get the user and group id with the groupname
 * usermod -g <groupname> <username> - make the group user primary group.
 * usermod -G <groupname> <username> - Add user to another group (to a new supplementary group)
 * usermod -G <groupname1>,<groupname2> <username> - Add user to multiple groups  
@@ -127,9 +127,46 @@ MANAGING GROUPS
   Groups are stored in /etc/group - cat /etc/group (output - groupName : password : group ID : Users)
   * groupadd groupname - to create a group
   * groupmod -n grouprename groupname - to rename thr groupname where -n stands for new-name
+  * members groupname - list users in a group
   * groupdel groupname - to delete a group
   
-  ## File Permission
+  ## File Permission  
+  Linux has two authorization levels Ownership and Permission. 
+  
+  USER TYPES
+  Flile owners: Three user types
+  1. owner (u) -The user who created the file is the owner of the file.  
+  2. Group (g)- all user in the group have the same file permision  
+  3. other (o) - other users who has access to the file(everybody else)  
+  4. all users (a)
+  
+  PERMISSIONS
+  Linux uses file permission to distinquish these three users.  
+  Every file directory has three permissions.  
+  * Read - 4
+  * Write - 2
+  * Execute - 1
+  * no permission - 0  
+  
+  
+  
+  ACTIONS  
+  we can perform these three actions on the permisions
+  * remove -
+  * add +
+  * replace =
+  
+  TO SET FILE PERMISSIONS
+  * chown - choose owner(to assign file to user)
+  * chmod - CHange MODe (changes the permissions (attributes) of a file or directory)
+  * chmod 750 dirname/filename - user(owner) - full permisions(7), group -read and execute permissions(5), others - no permissions(0).
+  * chmod o-w filename - remove write permision for other users
+  * chmod a+rw - give read and write permission to all users
+  * chmod g+x - give add execute permision to g users
+  * chmod a=x - replace permission for all user with only execute permission.
+  * chmod a= filename or chmod 000 filename - replace/give permissions for all users to no permissions.
+  * chmod a=rwx filename or chmod 777 filename - replace/give full permissions to all users.
+  * chmod u+x,g=rw,o-w filename - add execute permissions to user(owner), replace groupuser permissions with read and write, remove write permission from other users.
   
 ## SystemD
 * systemctl or systemctl list-units- list of all applications(units)
