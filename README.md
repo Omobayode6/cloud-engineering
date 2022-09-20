@@ -201,6 +201,7 @@ system log info are stores in /var/log. /var/log/journal is the journal log info
   
   ## Bash Scripting  
   bash stands for bourne again shell
+  ### 1. Hello Bash Scripting
   * cat /etc/shells -  to see all our shells
   * which bash - to know the bash path and add this path to every script you write that is related to bash.(#! /usr/bin/bash)
   * touch helloScript.sh - to creat a script
@@ -208,6 +209,14 @@ system log info are stores in /var/log. /var/log/journal is the journal log info
   * ls -l to check the file permission
   * ./helloScript.sh - to execute the script, same as bash helloScript.sh
   * bash helloScript.sh - to execute the script
+  * in your bash script you can echo > file.txt - echo into another file or cat > file.txt (this replace the text in file.txt) cat >> file.txt (This append the text to the formal one in file.txt)- that is redirecting the outcome of the scrip to a file.  
+  * #Here is a single line comment
+  * : ' Here is a multi line comments '
+  * cat << Kreativ This is a line of text Here ia nother line of text Kreativ(to end it) - hereDock output the text including comment into the terminal.
+  
+  ### Conditional Statement
+  * 
+  
   
   
   
