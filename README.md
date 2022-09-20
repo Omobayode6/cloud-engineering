@@ -106,6 +106,15 @@ Apache web service is the sutware that respon and sed the website file to our br
   
 Configuration of the Advanced Packaging Tool (APT) system repositories is stored in the /etc/apt/sources.list file and the /etc/apt/sources.list.d directory.  
 A makefile contains instructions for how an application should be compiled.
+  
+  ## Switching between users
+  * whoami - to check the current login user
+  * su user2 - to login to user2
+  * sudo su - switch to the root user
+  * cd - takes you back to user home directory from anywhere you are - same as cd ~
+  * cd ~ - to switch to user home directory. 
+  * cd / - takes you to the root directory of file system.
+  * exit - to logout of the current user
 
 ## Groups & Users  
 Everything in linux is represented as file.  
@@ -127,6 +136,8 @@ MANAGING GROUPS
   Groups are stored in /etc/group - cat /etc/group (output - groupName : password : group ID : Users)
   * groupadd groupname - to create a group
   * groupmod -n grouprename groupname - to rename thr groupname where -n stands for new-name
+  * groups - to get all the groups you(user) are a member of.
+  * newgrp groupname - to work as a member of the new group other than your default group.
   * members groupname - list users in a group
   * groupdel groupname - to delete a group
   
@@ -143,10 +154,10 @@ MANAGING GROUPS
   PERMISSIONS  
   Linux uses file permission to distinquish these three users.  
   Every file directory has three permissions.  
-  * Read - 4
-  * Write - 2
-  * Execute - 1
-  * no permission - 0  
+  * Read (r) - 4
+  * Write (w) - 2
+  * Execute (x) - 1
+  * no permission (-) - 0  
   
   
   
@@ -157,7 +168,9 @@ MANAGING GROUPS
   * replace =
   
   SET FILE PERMISSIONS
-  * chown - choose owner(to assign file to user)
+  * chown newOwnername filename - change ownership of a file or directory (to assign file to user)
+  * chown newOwnername:newGroupname filename - to change ownership as well as group to a file or directory.
+  * chgrp newGroupname filename - to change the group of a file or directory.
   * chmod - CHange MODe (changes the permissions (attributes) of a file or directory)
   * chmod 750 dirname/filename - user(owner) - full permisions(7), group -read and execute permissions(5), others - no permissions(0).
   * chmod o-w filename - remove write permision for other users
@@ -168,6 +181,9 @@ MANAGING GROUPS
   * chmod a=rwx filename or chmod 777 filename - replace/give full permissions to all users.
   * chmod u+x,g=rw,o-w filename - add execute permissions to user(owner), replace groupuser permissions with read and write, remove write permission from other users.
   
+  ## Linux Process Management
+  
+  ## SystemD, Configuring Apache Services
 ## SystemD
 * systemctl or systemctl list-units- list of all applications(units)
 * systemctl --failed - List failed units
@@ -179,5 +195,21 @@ MANAGING GROUPS
 * systemctl suspend <application>
 * systemctl hibernate <application>  
 system log info are stores in /var/log. /var/log/journal is the journal log info directory
+  
+  
+  ## Linux Firewall
+  
+  ## Bash Scripting  
+  bash stands for bourne again shell
+  * cat /etc/shells -  to see all our shells
+  * which bash - to know the bash path and add this path to every script you write that is related to bash.(#! /usr/bin/bash)
+  * touch helloScript.sh - to creat a script
+  * chmod +x helloScript.sh - to give it executable permissions to all users
+  * ls -l to check the file permission
+  * ./helloScript.sh - to execute the script, same as bash helloScript.sh
+  * bash helloScript.sh - to execute the script
+  
+  
+  
   
   
