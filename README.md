@@ -114,6 +114,7 @@ A makefile contains instructions for how an application should be compiled.
   * cd - takes you back to user home directory from anywhere you are - same as cd ~
   * cd ~ - to switch to user home directory. 
   * cd / - takes you to the root directory of file system.
+  * pwd - to print your curent working directory
   * exit - to logout of the current user
 
 ## Groups & Users  
