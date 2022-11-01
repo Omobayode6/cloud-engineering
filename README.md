@@ -229,8 +229,8 @@ system log info are stores in /var/log. /var/log/journal is the journal log info
   * Machine1 - ssh-keygen - to generate key for machine 1
   * Machine2 - sudo nano /etc/ssh/sshd_config (go to the line of password authentication and change no to yes) - to allow connection
   * sudo systemctl restart sshd - to reload the ssh service for the changes above to take effect(u can use restart/reload for the command)
-  * Machine 1 - ssh-copy-id -i vagrant@ipaddress_of_machine2 - to copy the machine1 pub key to machine2 (use ifconfig to get machine2 ip address)
-  * enter the password(vagrant password is vagrant) or cat ~/.ssh/id_rsa.pub to get the public key
+  * Machine 1 - ssh-copy-id -i vagrant@ipaddress_of_machine2 - to copy the machine1 pub key to machine2 (use ifconfig to get machine2 ip address) or cat ~/.ssh/id_rsa.pub to get the public key
+  * enter the password(vagrant password is vagrant) 
   * to test if it works, back to machine 2 and we turn off the password authentication we turn on ealier and save - sudo nano /etc/ssh/sshd_config $ sudo systemctl restart sshd
   * machine1 - ssh vagrant@machine2ipaddress - you have successfully login to machine2 from machine1  
   
